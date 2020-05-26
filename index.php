@@ -187,11 +187,13 @@
           <span>Admin</span></a>
       </li>
 
+      <?php if (is_dir("../rapsap")) { ?>
       <li class="nav-item">
         <a class="nav-link" href="../raspap/" target="WiFiManager">
           <i class="fas fa-fw fa-wifi"></i>
           <span>Wifi Manager</span></a>
       </li>
+      <?php } ?>
 
       <li class="nav-item">
         <a class="nav-link" href="about.php">
@@ -283,7 +285,7 @@
           </div>
         <!-- TBC -->
           <div class="col-xl-3 col-sm-6 mb-3">
-            <a href = "../raspap" target="WiFiManager">
+            <?php if (is_dir("../raspap")) { ?> <a href = "../raspap" target="WiFiManager"> <?php } ?>
             <div class="card text-white bg-wifi o-hidden h-100" >
               <div class="card-body">
                 <div class="card-body-icon">
@@ -296,7 +298,7 @@
                 </div>
               </div>
             </div>
-            </a>
+            <?php if (is_dir("../raspap")) { ?>  </a> <?php } ?>
           </div>
         </div>
 
@@ -423,16 +425,20 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
+  <!-- Not needed for this page
   <script src="vendor/chart.js/Chart.min.js"></script>
   <script src="vendor/datatables/jquery.dataTables.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  -->
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
+  <!-- Not needed for this page
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
+  -->
 
 </body>
 
