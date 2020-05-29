@@ -1,15 +1,15 @@
-# [Start Bootstrap - SB Admin](https://startbootstrap.com/template-overviews/sb-admin/)
+# [Derived From - Start Bootstrap - SB Admin](https://startbootstrap.com/template-overviews/sb-admin/)
 
 [SB Admin](http://startbootstrap.com/template-overviews/sb-admin/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
 ## Preview
 
-[![SB Admin Preview](https://startbootstrap.com/assets/img/templates/sb-admin.jpg)](https://blackrockdigital.github.io/startbootstrap-sb-admin/)
+[![SB Admin Preview] For a preview of the master template see (https://startbootstrap.com/assets/img/templates/sb-admin.jpg)](https://blackrockdigital.github.io/startbootstrap-sb-admin/)
 
 **[View Live Preview](https://blackrockdigital.github.io/startbootstrap-sb-admin/)**
 
 ## Status
-
+For master template:
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-sb-admin/master/LICENSE)
 [![npm version](https://img.shields.io/npm/v/startbootstrap-sb-admin.svg)](https://www.npmjs.com/package/startbootstrap-sb-admin)
 [![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-sb-admin.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-sb-admin)
