@@ -8,6 +8,7 @@ This package is the web manaement interface for PiZero-WU WiFi Enabled USB key w
 
 
 ## Preview
+[Demo] (https://nwadmin.github.io/demo/)
 
 https://github.com/OneOfTheInfiniteMonkeys/nwadmin/blob/master/nwadmin-01.gif
 
