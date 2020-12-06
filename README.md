@@ -9,6 +9,8 @@ This package is the web manaement interface for PiZero-WU WiFi Enabled USB key w
 
 ## Preview
 
+https://github.com/OneOfTheInfiniteMonkeys/nwadmin/blob/master/nwadmin-01.gif
+
 [![PiZero-WU Preview] For a preview see (https://startbootstrap.com/assets/img/templates/sb-admin.jpg)](https://blackrockdigital.github.io/startbootstrap-sb-admin/)
 
 
