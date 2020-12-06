@@ -8,12 +8,12 @@ This package is the web manaement interface for PiZero-WU WiFi Enabled USB key w
 
 
 ## Preview
-[Demo] (https://nwadmin.github.io/demo/)
+A preview of the nwadmin web interface for PiZero-WU is shown in the GIF animation below:
 
-https://github.com/OneOfTheInfiniteMonkeys/nwadmin/blob/master/nwadmin-01.gif
+[![Tiny File Manager](nwadmin-01.gif)](nwadmin-01.gif)
 
-[![PiZero-WU Preview] For a preview see (https://startbootstrap.com/assets/img/templates/sb-admin.jpg)](https://blackrockdigital.github.io/startbootstrap-sb-admin/)
-
+The animation runs through a number of the interactive forms on the PiZero-WU.
+For Tiny File Manager see the project here: https://github.com/OneOfTheInfiniteMonkeys/tinyfilemanager
 
 ## Status
 For master template:
