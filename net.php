@@ -1,3 +1,14 @@
+<?php
+//----------------------------------------------------------------------------->
+// Check for use only from root page i.e. not by user
+//----------------------------------------------------------------------------->
+if(!isset($_SESSION['WebInstance'])) {                                           // Root page defines this variable as TRUE
+     http_response_code(400);                                                   // Bad request error
+     include('400.html');                                                       // Custom HTML for the error page
+     die();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +23,13 @@
   <title>PiZero-WU - Internet</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="./fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="./datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="./css/sb-admin.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 

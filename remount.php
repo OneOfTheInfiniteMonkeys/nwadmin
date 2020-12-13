@@ -9,6 +9,12 @@
 // Example usage   :
 //----------------------------------------------------------------------------->
 //
+//----------------------------------------------------------------------------->
+// Check for use only from root page i.e. not by user
+//----------------------------------------------------------------------------->
+if(!isset($_SESSION['WebInstance'])) {                                          // Root page defines this variable as TRUE
+     die();
+  }
 
   i2c_message("{\"text\":\"  Remount \",\"image\":\"raspberry02.png\",\"delay\":20}");  // Ouput message on i2c display
 

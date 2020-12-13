@@ -2,7 +2,7 @@
 //----------------------------------------------------------------------------->
 // Check for use only from root page i.e. not by user
 //----------------------------------------------------------------------------->
-if(!isset($_SESSION['WebInstance'])) {                                           // Root page defines this variable as TRUE
+if(!isset($_SESSION['WebInstance'])) {                                          // Root page defines this variable as TRUE
      http_response_code(400);                                                   // Bad request error
      include('400.html');                                                       // Custom HTML for the error page
      die();
@@ -12,24 +12,48 @@ if(!isset($_SESSION['WebInstance'])) {                                          
 <!DOCTYPE html>
 <html lang="en">
 
+<!--=========================================================================-->
+<!-- Project        : nwadmin ( Pi-ZeroWU )                                  -->
+<!-- File           : admin.php                                              -->
+<!-- Author         : OneOfTheInfiniteMonkeys                                -->
+<!-- Revision       : 1.00                                                   -->
+<!-- Last Mod.      : 02 Jul 2020                                            -->
+<!--=========================================================================-->
+
+<!--=========================================================================-->
+<!-- Target         : Raspberry Pi Zero                                      -->
+<!-- PHP Version    : 7.3.14-1~deb10u1                                       -->
+<!-- Linux Version  : Debian Linux 4.19.118+ armv6l                          -->
+<!-- Description    : PiZero-Wu Dashboard                                    -->
+<!--=========================================================================-->
+
+
 <head>
-
-  <meta charset="utf-8">
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-  <title>PiZero-WU - Blank Page</title>
+  <meta name="description" content="PiZero-WU">
+  <meta name="author" content="OneOfTheInfinteMonkeys">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- force reload of page from server - 1 per hour -->
+  <meta HTTP-EQUIV="refresh" CONTENT="3600">
+
+
+  <title>PiZero-WU - Admin</title>
 
   <!-- Custom fonts for this template-->
   <link href="./fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="./datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="./css/sb-admin.css" rel="stylesheet">
+  <link href="css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -37,11 +61,11 @@ if(!isset($_SESSION['WebInstance'])) {                                          
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
+    <a class="navbar-brand mr-1" href="/nwadmin">PiZero-WU</a>
+
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
-
-    <a class="navbar-brand mr-1" href="/nwadmin">PiZero-WU</a>
 
     <!-- Navbar Search -->
     <!--
@@ -56,8 +80,7 @@ if(!isset($_SESSION['WebInstance'])) {                                          
       </div>
     </form>
     -->
-    <!-- End Of no NavBar search -->
- 
+
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
 
@@ -98,7 +121,6 @@ if(!isset($_SESSION['WebInstance'])) {                                          
         </div>
       </li>
       -->
-      <!-- End Of No NavBar items -->
     </ul>
 
   </nav>
@@ -128,7 +150,7 @@ if(!isset($_SESSION['WebInstance'])) {                                          
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
           <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
+          <a class="dropdown-item active" href="admin.html">Admin</a>
         </div>
       </li>
       <li class="nav-item">
@@ -142,7 +164,6 @@ if(!isset($_SESSION['WebInstance'])) {                                          
           <span>Tables</span></a>
       </li>
       --> 
-     <!-- End of Not these Sidebar items -->
     </ul>
 
     <div id="content-wrapper">
@@ -154,36 +175,24 @@ if(!isset($_SESSION['WebInstance'])) {                                          
           <li class="breadcrumb-item">
             <a href="/nwadmin">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">About</li>
+          <li class="breadcrumb-item active">Admin</li>
         </ol>
 
         <!-- Page Content -->
-        <div style="height:700px;width:100%;border:solid 2px gray;overflow:scroll;overflow-x:hidden;overflow-y:scroll;padding-top: 10px;  padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+        <h1><i class="fas fa-fw fa-tools"></i> Administration Page</h1>
+        <hr>
+        <p><a href="net.php" target="phpinfo"><i class="fas fa-globe"></i> Network Connectivity Test</a></p>
+        <p></p>
+        <p><a href="phpinfo.php" target="phpinfo"><i class="fas fa-server"></i> Server Information</a></p>
+        <p></p>
+        <p>Note: Functions below could result in data loss and should only be made following backup of data and settings.</p>
+        <p></p>
+        <p><a href="remount.php"><i class="fas fa-redo"></i> Remount USB disk</a></p>
 
-          <h1><i calss="fas fa-commen-al"></li>About</h1>
-          <hr>
-          <p>
-            PiZero-WU - Software Revision - 1.1 Sunrise - 12 Jan 2020 - (c) Copyright All Rights Reserved <a href="https://github.com/OneOfTheInfiniteMonkeys?tab=repositories" target="OOTIM">OneOfTheInfiniteMonkeys</a>
-          </p? 
-          <?php $result=exec("dpkg -l > ./tmp/sftver.txt"); ?>
-          <p>   
-            <pre>
-              <?php
-                  $file = "./tmp/sftver.txt";
-                  $f = fopen($file, "r") or exit("Unable to open file!");
-                  // read file line by line until the end of file (feof)
-                  while(!feof($f))
-                    {
-                      // echo fgets($f)."<br />";
-                      echo fgets($f);
-                    }
-                fclose($f);
-              ?>
-            </pre>
-          </p>
-         </div <!-- End Of Inner scrolling DIV -->
+        <p><a href="reboot.php"><i class="fas fa-power-off"></i> Restart</a></p>
+        <p><a href="shutdown.php"><i class="fas fa-toggle-off"></i> Shutdown</a></p>
+
       </div>
-      
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->

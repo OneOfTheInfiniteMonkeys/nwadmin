@@ -1,4 +1,11 @@
 <?php
+//----------------------------------------------------------------------------->
+// Check for use only from root page i.e. not by user
+//----------------------------------------------------------------------------->
+if(!isset($_SESSION['WebInstance'])) {                                          // Root page defines this variable as TRUE
+     die();
+  }
+
   $status = "";
   echo "Shutting down - ";
 

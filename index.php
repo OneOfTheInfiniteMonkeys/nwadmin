@@ -1,3 +1,14 @@
+<?php
+//----------------------------------------------------------------------------->
+// Set flag to permiting lower level scripts to run from web session
+//----------------------------------------------------------------------------->
+  if (session_status() == PHP_SESSION_NONE) {
+       session_start();
+    }
+  $_SESSION['WebInstance']=true;                                                // Root page defines this variable as TRUE - permiting use of sub scripts
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +23,13 @@
   <title>PiZero-WU - Dashboard</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="./fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="./datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="./css/sb-admin.css" rel="stylesheet">
 
   <!-- Jquery support -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -64,15 +75,15 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background-color: #404040">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-    <a class="navbar-brand mr-1" href="index.php">PiZero-WU</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
+
+    <a class="navbar-brand mr-1" href="index.php">PiZero-WU</a>
 
     <!-- Navbar Search -->
     <!--
@@ -164,7 +175,7 @@
       -->
 
       <li class="nav-item">
-        <a class="nav-link" href="info.html">
+        <a class="nav-link" href="info.php">
           <i class="fas fa-fw fa-info"></i>
           <span>Info</span></a>
       </li>
@@ -182,7 +193,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="admin.html">
+        <a class="nav-link" href="admin.php">
           <i class="fas fa-fw fa-tools"></i>
           <span>Admin</span></a>
       </li>
@@ -248,6 +259,7 @@
             </div>
             </a>
           </div>
+
         <!-- Percentage used -->
           <div class="col-xl-3 col-sm-6 mb-3">
             <a href = "../tinyfilemanager" target="FileManager">
@@ -266,7 +278,8 @@
             </div>
             </a>
           </div>
-        <!-- TBC -->
+
+        <!-- Hostname and IP address -->
           <div class="col-xl-3 col-sm-6 mb-3">
             <a href = "net.php">
             <div class="card text-white bg-success o-hidden h-100">
@@ -283,7 +296,8 @@
             </div>
             </a>
           </div>
-        <!-- TBC -->
+
+        <!-- WiFi Status -->
           <div class="col-xl-3 col-sm-6 mb-3">
             <?php if (is_dir("../raspap")) { ?> <a href = "../raspap" target="WiFiManager"> <?php } ?>
             <div class="card text-white bg-wifi o-hidden h-100" >

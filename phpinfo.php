@@ -3,6 +3,18 @@
 // PHP request to generate all status information
 //
 
+//----------------------------------------------------------------------------->
+// Check for use only from root page i.e. not by user
+//----------------------------------------------------------------------------->
+if(!isset($_SESSION['WebInstance'])) {                                           // Root page defines this variable as TRUE
+     http_response_code(400);                                                   // Bad request error
+     include('400.html');                                                       // Custom HTML for the error page
+     die();
+  }
+
+
+
+//----------------------------------------------------------------------------->
 //
   $host    = "127.0.0.1";                         // Local host connection
   $port    = 65432;                               // port to connect to 
