@@ -1,4 +1,12 @@
 <?php
+// ============================================================================
+//  Project        : nwadmin ( PiZero-WU )                                  
+//  File           : index.php                                              
+//  Author         : OneOfTheInfiniteMonkeys                                
+//  Revision       : 1.10                                                   
+//  Last Mod.      : 23 Dec 2020                                            
+// ============================================================================
+
 //----------------------------------------------------------------------------->
 // Set flag to permiting lower level scripts to run from web session
 //----------------------------------------------------------------------------->
@@ -11,6 +19,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- ======================================================================= -->
+<!-- From Startbootstrap SB Admin Boiler plate template                      -->
+<!-- Relevant elements Copyright (c) 2013-2019 Blackrock Digital LLC         -->
+<!-- As applicable e.g. those elements licensed under The MIT License (MIT)  -->
+<!--                                                                         -->
+<!-- As applicable, all other elements Copytight (c) 2020                    -->
+<!-- OneOfTheInfiniteMonkeys All rights reserved.                            -->
+<!-- ======================================================================= -->
 
 <head>
 
@@ -32,7 +49,8 @@
   <link href="./css/sb-admin.css" rel="stylesheet">
 
   <!-- Jquery support -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
   <script>
     // Timed ajax query to recover json response from server
